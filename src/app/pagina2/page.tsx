@@ -35,31 +35,43 @@ export default function Page2() {
 
   return(
     
-    <div className="select-none ">
+    <div className="select-none">
       <div className="flex justify-center items-center mr-70">
-        <div  onClick={() => playSoundAndNavigate('/')}>
+        <div >
             <a>
             <img  
                 src="/tittle.png " 
                 alt="logo tittle"
-                className="fixed z-10 w-70 h-auto transition-transform duration-300 hover:scale-110" // Define a largura e altura em Tailwind 
+                className="fixed z-10 w-70 h-auto transition-transform duration-300 hover:scale-110"
+                onClick={() => playSoundAndNavigate('/')} 
                 />
             </a>
+            <div id="escolha" className='mt-40'>
+                <img className=" fixed z-12 w-70 z-999" src="escolha.png" alt="escolha" />
+            </div>
         </div>
-        <div id="cat1" className="fixed flex justify-center items-center h-screen" onClick={playSound}>
-          <img className="w-40 mt-321 ml-250 animate-bounce" src="cat1.png" alt="gato1" />
+    
+        <div className='flex flex-row gap-50 fixed ml-70 mt-160' onClick={playSound2}>
+            <img src="seta2.png" alt="seta2" 
+            className='w-20 active:translate-y-1 transition-all duration-150 ease-in-out cursor-pointer' />
+
+            <img src="seta1.png" alt="seta1" 
+            className='w-20 active:translate-y-1 transition-all duration-150 ease-in-out cursor-pointer' />
+        </div>
+      </div>
+        <div id="cat3" className=" flex justify-center items-center z-13" onClick={playSound}>
+          <img className="fixed mt-130 w-40 h-auto animate-bounce" src="cat3.png" alt="gato3" />
         </div>
         
-        <div id="cat2" className="fixed flex justify-center items-center h-screen" onClick={playSound}>
-          <img className="w-45 mt-321 mr-100 ease-linear" src="cat2.png" alt="gato2" />
-        </div>    
-      </div>
+        <div className="flex justify-center items-center mt-100 ">
+            <img src="/play.png" alt="play" 
+            className="fixed w-50 h-auto transition-transform duration-300 hover:scale-110"
+            onClick={() => playSoundAndNavigate('/')}/>
+        </div>
 
-      <div className="flex justify-center items-center h-screen ">
-        <img src="/play.png" alt="play" 
-        className="fixed w-70 h-auto transition-transform duration-300 hover:scale-110"
-        onClick={() => playSoundAndNavigate('/pagina2')}/>
-      </div>
+
+
+     
 
     </div>
   )
