@@ -11,13 +11,10 @@ useEffect(() => {
   const audio2 = new Audio("/sounds/menu_music.mp3");
   audio2.loop = true; // faz a música tocar em loop
   audio2.play().catch((e) => console.warn("Erro ao tocar som:", e));
-
-  // Parar a música quando o componente for desmontado (boa prática)
-
-}, []);
+  }, []);
 
 
-    const router = useRouter(); // ✅ Instância do roteador do Next.js
+  const router = useRouter(); // ✅ Instância do roteador do Next.js
 
   useEffect(() => {
     document.title = "TAMAGOTCHI";
@@ -39,9 +36,14 @@ useEffect(() => {
   audio.play();
   }, []);
 
-    const playSound2 = useCallback(() => {
+  const playSound2 = useCallback(() => {
   const audio2 = new Audio("/sounds/play_sound.wav"); // Caminho dentro da pasta public
   audio2.play();
+  }, []);
+
+  const playSound3 = useCallback(() => {
+  const audio3 = new Audio("/sounds/select.mp3"); // Caminho dentro da pasta public
+  audio3.play();
   }, []);
 
   return(
@@ -62,11 +64,11 @@ useEffect(() => {
       <div className='flex flex-row gap-50 fixed'>
           <img src="seta2.png" alt="seta2" 
           className='w-20 active:translate-y-1 transition-all duration-150 ease-in-out cursor-pointer' 
-          onClick={playSound2}/>
+          onClick={playSound3}/>
 
           <img src="seta1.png" alt="seta1" 
           className='w-20 active:translate-y-1 transition-all duration-150 ease-in-out cursor-pointer'
-          onClick={playSound2} />
+          onClick={playSound3} />
       </div>
 
       <div id="escolha" className='fixed mb-100'>

@@ -19,8 +19,6 @@ useEffect(() => {
     document.title = "TAMAGOTCHI";
   }, []);
 
-    
-
     const playSoundAndNavigate = useCallback((path: string) => {
     const audio2 = new Audio("/sounds/play_sound.wav");
     audio2.play();
@@ -35,10 +33,15 @@ useEffect(() => {
   audio.play();
   }, []);
 
-    const playSound2 = useCallback(() => {
+  const playSound2 = useCallback(() => {
   const audio2 = new Audio("/sounds/play_sound.wav"); // Caminho dentro da pasta public
   audio2.play();
   }, []);
+
+
+    const brincar = useCallback(() =>{
+    console.log("tamagotchi")
+  },[]);
 
   return(
     
@@ -61,7 +64,7 @@ useEffect(() => {
 
             <img src="/brincar.png" alt="brincar"
             className='h-15 w-auto transition-transform duration-300 hover:scale-110 z-100 cursor-pointer'
-            onClick={() => playSoundAndNavigate('')} />
+            onClick={ ()=> {playSound2(); brincar() }} />
 
             <img src="/comer.png" alt="comer"
             className='h-15 w-auto transition-transform duration-300 hover:scale-110 z-100 cursor-pointer'
